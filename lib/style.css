@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap');
+body {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 200;
+  margin: 0;
+  display: grid;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+}
+
+header {
+  background: linear-gradient(164deg, rgba(123,134,232,1) 0%, rgba(246,140,255,1) 52%, rgba(255,222,50,1) 100%);
+}
+
+#menu {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+}
+
+/* checkbox hax */
+input[type=checkbox] {
+  display: none;
+ }
+
+#hamburger {
+  display: none;
+  font-size: 2em;
+  user-select: none;
+}
+
+@media screen and (max-width: 800px) {
+  #menu {
+    display: none;
+  }
+
+  #hamburger {
+    display: block;
+  }
+
+  #checkbox_toggle:checked ~ #menu {
+    display: block;
+  }
+}
