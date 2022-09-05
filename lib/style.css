@@ -7,6 +7,8 @@ body {
   grid-template-rows: auto 1fr;
   background: linear-gradient(164deg, rgba(123,134,232,1) 0%, rgba(246,140,255,1) 52%, rgba(255,222,50,1) 100%);
   height: 100vh;
+  color: white;
+
 }
 #mobile_nav {
   display: none;
@@ -41,11 +43,17 @@ input[type=checkbox] {
   display: none;
  }
 header {
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   position: sticky;
   top: 0;
-  padding: 0 1em;
+  padding: 0;
+  z-index: 9999;
+}
+header h1, header label {
+  padding: 0 .5em;
+  padding-bottom: 1em;
 }
 #hamburger {
   display: none;
@@ -53,8 +61,74 @@ header {
   user-select: none;
 
 }
+nav {
+  z-index: 9999;
+}
 
+#social_strip {
+  display: flex;
+  gap: .5em;
+  padding-top: .5em;
+}
+.social {
+  width: 1em;
+  height: 1em;
+}
+
+/* .social:hover {
+  opacity: 70%;
+} */
+.menu_link {
+  text-decoration: none;
+  color: white;
+}
+.menu_link:hover {
+  opacity: 70%;
+}
+
+
+
+/* Swiper stuff */
+#intro_items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, min(290px));
+  /* padding: 2em; */
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.intro_product {
+  height: 400px;
+  width: 250px;
+  background-color: rgba(255, 255, 255, 0.575);
+  border-radius: 10px;
+  align-self: center;
+  /* box-shadow: 1px 1px 2px #464545; */
+}
+
+.intro_item {
+  height: 250px;
+  width: 250px;
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+
+}
+
+
+.swiper .swiper-button-prev, .swiper .swiper-button-next {
+  color: white;
+}
+.swiper .swiper-pagination-bullet-active {
+  background: white;
+}
+.swiper .swiper-pagination-bullet {
+  background: white;
+}
 @media screen and (max-width: 800px) {
+  body {
+    height: 100%;
+  }
   #desktop_nav {
     display: none;
   }
@@ -68,16 +142,12 @@ header {
   #hamburger {
     display: flex;
   }
-
+  #intro_items {
+    display: flex;
+    flex-direction: column;
+  }
   #checkbox_toggle:checked ~ #mobile_nav {
     display: flex;
   }
-}
-
-
-
-img { 
-  width:100vw;
-  height: 2000px;
-
+  
 }
