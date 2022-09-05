@@ -24,6 +24,7 @@ body {
 #desktop_menu {
   display: flex;
   gap: 1em;
+  padding-right: 1em;
 }
 li {
   display: flex;
